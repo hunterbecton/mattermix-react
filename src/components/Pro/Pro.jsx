@@ -50,7 +50,7 @@ const Pro = ({ children, price }) => {
     }
 
     const { session } = await apiGetSession(
-      '5f8753ddb4fc02bc8451b0f1',
+      '5f930b1742a20800175c7b40',
       customerId,
       '/templates'
     );
