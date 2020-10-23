@@ -1,25 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+
+import Homepage from './components/Homepage/Homepage';
+
+import StyledToast from './components/Toaster/StyledToast';
+import ScrollToTop from './utils/ScrollToTop';
+
+// 404
+import NotFound from './components/404/NotFound';
+
+// Purchase
+import Pro from './components/Pro/Pro';
+
+// Auth
+import Verify from './components/Auth/Verify';
+import Login from './components/Auth/Login';
+import ProtectedRoute from './components/Routes/ProtectedRoutes';
+
+// Social Routes
+import Card01Editor from './components/SocialCards/Saas/Card01/Card01Editor';
+import Card02Editor from './components/SocialCards/Saas/Card02/Card02Editor';
+import Card03Editor from './components/SocialCards/Saas/Card03/Card03Editor';
+import Card04Editor from './components/SocialCards/Saas/Card04/Card04Editor';
+import Card05Editor from './components/SocialCards/Saas/Card05/Card05Editor';
+import Card06Editor from './components/SocialCards/Saas/Card06/Card06Editor';
+
+// Social Templates
+import SocialTemplates from './components/Template/SocialTemplates';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Switch>
+        <Route path='/' component={Homepage} exact />
+        <Route path='/verify' component={Verify} exact />
+        <Route path='/login' component={Login} exact />
+        <Route path='/templates' component={SocialTemplates} exact />
+        <Route path='/pro' component={Pro} exact />
+        <Route path='/social/saas/1' component={Card01Editor} exact />
+        <Route path='/social/saas/2' component={Card02Editor} exact />
+        <ProtectedRoute path='/social/saas/3' component={Card03Editor} exact />
+        <ProtectedRoute path='/social/saas/4' component={Card04Editor} exact />
+        <ProtectedRoute path='/social/saas/5' component={Card05Editor} exact />
+        <ProtectedRoute path='/social/saas/6' component={Card06Editor} exact />
+        <Route path='/*' component={NotFound} />
+      </Switch>
+      <StyledToast />
+    </Fragment>
   );
 }
 

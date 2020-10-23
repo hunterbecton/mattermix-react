@@ -1,17 +1,23 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Theme from './styles/theme';
+import { GlobalStyles } from './styles/GlobalStyles';
+import { ProvideAuth } from './hooks/useAuth';
+import ScrollToTop from 'react-router-scroll-top';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ThemeProvider theme={Theme}>
+    <GlobalStyles />
+    <Router>
+      <ScrollToTop />
+      <ProvideAuth>
+        <App />
+      </ProvideAuth>
+    </Router>
+  </ThemeProvider>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
