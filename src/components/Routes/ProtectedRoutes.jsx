@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -15,14 +15,7 @@ const LoaderContainer = styled.div`
 `;
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
-  const { isAuthenticating, isLoggedIn, user } = useAuth();
-
-  // useEffect(() => {
-  //   const runIsLoggedIn = async () => {
-  //     await isLoggedIn();
-  //   };
-  //   runIsLoggedIn();
-  // }, []);
+  const { isAuthenticating, user } = useAuth();
 
   if (isAuthenticating) {
     return (

@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import Chevron from '../../../images/chevron.svg';
-
 const CardFormFieldContainer = styled.div`
   display: flex;
   flex-direction: column;

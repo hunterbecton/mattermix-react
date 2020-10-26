@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Prismic from 'prismic-javascript';
+import slugify from 'slugify';
 
 import Layout from '../Layout/Layout';
 import H1 from '../Typography/H1';
 import TemplateContainer from './TemplateContainer';
 import TemplateCard from './TemplateCard';
 import Loader from '../Loader/Loader';
+import filterTags from '../../utils/filterTags';
 
 const apiEndpoint = 'https://mattermix.cdn.prismic.io/api/v2';
 const accessToken =
@@ -23,11 +25,13 @@ const SocialTemplates = () => {
         {
           pageSize: 12,
           page: 1,
-          orderings: '[my.template_card.reference_number]',
+          orderings:
+            '[my.template_card.collection, my.template_card.reference_number]',
         }
       );
       if (response) {
         setDocs(response.results);
+        console.log(response.results);
       }
     };
     fetchData();
@@ -42,10 +46,12 @@ const SocialTemplates = () => {
           docs.map((doc, i) => (
             <TemplateCard
               key={i}
-              slug={`/social/saas/${doc.data.reference_number}`}
+              slug={`/social/${slugify(doc.data.collection.toLowerCase())}/${
+                doc.data.reference_number
+              }`}
               img={doc.data.feature_image.url}
               pro={doc.data.pro}
-              tags={doc.tags}
+              tags={filterTags(doc.tags)}
             />
           ))}
       </TemplateContainer>

@@ -18,8 +18,10 @@ const CardFormSelect = ({
         onKeyDown={(e) => console.log(e)}
         defaultValue={defaultValue}
       >
-        {options.map((option) => (
-          <option value={option.value}>{option.text}</option>
+        {options.map((option, i) => (
+          <option value={option.value} key={i}>
+            {option.text}
+          </option>
         ))}
       </select>
     </CardFormFieldContainer>

@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Homepage from './components/Homepage/Homepage';
 
 import StyledToast from './components/Toaster/StyledToast';
-import ScrollToTop from './utils/ScrollToTop';
 
 // 404
 import NotFound from './components/404/NotFound';
@@ -38,12 +37,12 @@ function App() {
         <Route path='/login' component={Login} exact />
         <Route path='/templates' component={SocialTemplates} exact />
         <Route path='/pro' component={Pro} exact />
-        <Route path='/social/saas/1' component={Card01Editor} exact />
-        <Route path='/social/saas/2' component={Card02Editor} exact />
-        <ProtectedRoute path='/social/saas/3' component={Card03Editor} exact />
-        <ProtectedRoute path='/social/saas/4' component={Card04Editor} exact />
-        <ProtectedRoute path='/social/saas/5' component={Card05Editor} exact />
-        <ProtectedRoute path='/social/saas/6' component={Card06Editor} exact />
+        <Route path='/social/vega/1' component={Card01Editor} exact />
+        <Route path='/social/vega/2' component={Card02Editor} exact />
+        <ProtectedRoute path='/social/vega/3' component={Card03Editor} exact />
+        <ProtectedRoute path='/social/vega/4' component={Card04Editor} exact />
+        <ProtectedRoute path='/social/vega/5' component={Card05Editor} exact />
+        <ProtectedRoute path='/social/vega/6' component={Card06Editor} exact />
         <Route path='/*' component={NotFound} />
       </Switch>
       <StyledToast />

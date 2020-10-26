@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Grid from '../Layout/Grid';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
+import MobileNav from '../Mobile/MobileNav';
 
 const LayoutGrid = styled(Grid)`
   min-height: 100vh;
@@ -17,11 +17,7 @@ const Layout = ({
   marginSmall,
   noFooter,
 }) => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+  const [isMobileOpen, setMobileOpen] = useState(false);
 
   return (
     <LayoutGrid
@@ -29,7 +25,8 @@ const Layout = ({
       marginMedium={marginMedium}
       marginSmall={marginSmall}
     >
-      <Nav />
+      <MobileNav isMobileOpen={isMobileOpen} />
+      <Nav setMobileOpen={setMobileOpen} isMobileOpen={isMobileOpen} />
       {children}
       {noFooter ? null : <Footer />}
     </LayoutGrid>

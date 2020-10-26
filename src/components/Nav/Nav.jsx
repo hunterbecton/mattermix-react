@@ -6,12 +6,13 @@ import { toast } from 'react-toastify';
 import NavContainer from './NavContainer';
 import DropdownContainer from './DropdownContainer';
 import DropdownMenu from './DropdownMenu';
+import Hamburger from '../Mobile/Hamburger';
 import MattermixLogo from '../../images/mattermix-logo.svg';
 import { apiGetPortalSession } from '../../api/payment';
 
 import { useAuth } from '../../hooks/useAuth';
 
-const Nav = () => {
+const Nav = ({ setMobileOpen, isMobileOpen }) => {
   const { user, logout } = useAuth();
 
   const history = useHistory();
@@ -62,11 +63,19 @@ const Nav = () => {
                 tabIndex='0'
                 role='button'
                 onClick={() => handlePortal(user.customerId)}
+                onKeyDown={(e) =>
+                  e.key === 'Enter' ? handlePortal(user.customerId) : null
+                }
               >
                 Manage
               </p>
             )}
-            <p tabIndex='0' role='button' onClick={() => logout(history)}>
+            <p
+              tabIndex='0'
+              role='button'
+              onClick={() => logout(history)}
+              onKeyDown={(e) => (e.key === 'Enter' ? logout(history) : null)}
+            >
               Logout
             </p>
           </DropdownMenu>
@@ -77,6 +86,7 @@ const Nav = () => {
           Login
         </NavLink>
       )}
+      <Hamburger setMobileOpen={setMobileOpen} isMobileOpen={isMobileOpen} />
     </NavContainer>
   );
 };

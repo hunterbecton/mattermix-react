@@ -14,6 +14,7 @@ export default {
     red01: '#F2505E',
   },
   breakpoints: {
+    xs: 'only screen and (max-width: 32rem)',
     s: 'only screen and (max-width: 65rem)',
     m: 'only screen and (max-width: 70rem)',
   },
@@ -31,6 +32,7 @@ export default {
     button: 'background-color 0.3s ease',
     field: 'border-bottom 0.3s ease',
     filter: 'filter 0.3s ease',
+    menu: 'width 0.5s ease',
   },
   shadows: {
     card: 'drop-shadow(0px 8px 8px #2A2A2C)',

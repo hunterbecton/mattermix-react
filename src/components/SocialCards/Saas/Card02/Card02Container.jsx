@@ -125,6 +125,7 @@ const Card02Container = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
   }
 
   .cta {

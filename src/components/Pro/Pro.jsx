@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { loadStripe } from '@stripe/stripe-js';
 import { toast } from 'react-toastify';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../hooks/useAuth';
 import { apiGetSession, apiGetNewCustomerId } from '../../api/payment.js';
@@ -29,8 +29,6 @@ const ProContainer = styled.div`
 const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_PK}`);
 
 const Pro = ({ children, price }) => {
-  const location = useLocation();
-
   const history = useHistory();
 
   const { user } = useAuth();

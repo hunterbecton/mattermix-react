@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import social from '../../../../images/468x468.jpg';
-
 const titleLandscapeFontSize = 56;
 
 const titleLandscapeLineSize = 64;

@@ -60,8 +60,8 @@ class Card06 extends Component {
           id={this.props.id}
           logo={this.state.logo1}
           logo2={this.state.logo2}
-          logo2={this.state.logo3}
-          logo2={this.state.logo4}
+          logo3={this.state.logo3}
+          logo4={this.state.logo4}
           titleSize={this.props.titleSize}
           logoSize={this.props.logoSize}
           logo2Size={this.props.logo2Size}

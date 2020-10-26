@@ -28,7 +28,7 @@ const CaptchaButton = ({
       onClick={clickHandler}
       type='button'
       backgroundColor={backgroundColor}
-      cursor={verified ? true : false}
+      cursor={verified ? 'default' : 'pointer'}
       hover={hover}
       disabled={verified ? true : false}
     >

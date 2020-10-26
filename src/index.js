@@ -7,7 +7,7 @@ import App from './App';
 import Theme from './styles/theme';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { ProvideAuth } from './hooks/useAuth';
-import ScrollToTop from 'react-router-scroll-top';
+import ScrollToTop from './components/Scroll/ScrollToTop';
 
 ReactDOM.render(
   <ThemeProvider theme={Theme}>

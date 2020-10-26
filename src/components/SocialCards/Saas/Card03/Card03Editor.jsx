@@ -21,7 +21,6 @@ import SquareToggle from '../../_Toggle/SquareToggle';
 import LandscapeToggle from '../../_Toggle/LandscapeToggle';
 import square from '../../../../images/square.svg';
 import landscape from '../../../../images/landscape.svg';
-import ProContent from '../../../Pro/Pro';
 
 const swatch = [
   '#626DFF',

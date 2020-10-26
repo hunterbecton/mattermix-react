@@ -15,6 +15,8 @@ const HomepageHero = styled.div`
 
   p {
     margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
     font-weight: 400;
   }
 
