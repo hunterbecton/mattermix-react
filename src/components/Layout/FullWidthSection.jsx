@@ -11,8 +11,8 @@ const FullWidthSection = styled.section`
   @media ${(props) => props.theme.breakpoints.m} {
     grid-column: 1 / span 8;
     grid-template-columns: 2rem repeat(6, 1fr) 2rem;
-    gap: ${(props) => (props.gapDefault ? props.gapDefault : '1rem 1rem')};
-    margin: ${(props) => (props.marginDefault ? props.marginDefault : 0)};
+    gap: ${(props) => (props.gapMedium ? props.gapMedium : '1rem 1rem')};
+    margin: ${(props) => (props.marginMedium ? props.marginMedium : 0)};
   }
 
   @media ${(props) => props.theme.breakpoints.s} {

@@ -9,7 +9,7 @@ const HomepageHero = styled.div`
   h1 {
     font-size: 2.5rem;
     line-height: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     font-weight: 500;
   }
 

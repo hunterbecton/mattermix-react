@@ -15,14 +15,14 @@ const Homepage = () => {
           Create social media graphics for your business. No design skills
           needed.
         </h1>
-        <p>
+        {/* <p>
           Simply type, upload photos, choose colors and fonts, and download.
-        </p>
-        <Link to='/social/saas/1'>Try it now</Link>
+        </p> */}
+        <Link to='/social/vega/1'>Try it now</Link>
       </HomepageHero>
-      {/* <HomepageWave>
+      <HomepageWave>
         <img src={Wave} alt='wave' />
-      </HomepageWave> */}
+      </HomepageWave>
     </Layout>
   );
 };
